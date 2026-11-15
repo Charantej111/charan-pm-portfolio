@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { 
-  ArrowUpRight, 
-  Layers, 
-  Cpu, 
-  BarChart3, 
-  CheckCircle2, 
-  AlertCircle, 
-  Terminal, 
-  Workflow, 
-  Users, 
+import {
+  ArrowUpRight,
+  Layers,
+  Cpu,
+  BarChart3,
+  CheckCircle2,
+  AlertCircle,
+  Terminal,
+  Workflow,
+  Users,
   TrendingUp,
   Sliders,
   Sparkles
@@ -18,11 +18,7 @@ import {
 export default function CaseStudiesSection() {
   const caseStudies = portfolioData.caseStudies;
   // Track active tab ('problem' | 'process' | 'solution' | 'result') for each case study
-  const [activeTabs, setActiveTabs] = useState({
-    signalflow: 'problem',
-    wayfinder: 'problem',
-    delizoo: 'problem',
-  });
+  const [activeTabs, setActiveTabs] = useState({});
 
   const handleTabChange = (studyId, tabKey) => {
     setActiveTabs(prev => ({ ...prev, [studyId]: tabKey }));
@@ -37,20 +33,20 @@ export default function CaseStudiesSection() {
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2 h-2 rounded-full bg-brand-lime"></span>
               <span className="text-xs font-mono uppercase tracking-widest text-ink-muted">
-                02 / Selected Works & Case Studies
+                SELECTED WORK
               </span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-ink">
-              End-to-End Product Case Studies
+              A few products I've built, launched, and operated.
             </h2>
             <p className="text-base sm:text-lg text-ink-secondary mt-2 max-w-2xl font-normal">
-              Detailed breakdowns of real software products I shaped from ambiguous problem framing to scalable production release.
+              Different products, different users, same goal: solve a real problem and make the product work in the real world.
             </p>
           </div>
 
           <div className="flex items-center gap-2 text-xs font-mono text-ink-muted bg-canvas px-3 py-1.5 rounded-lg border border-line">
-            <span>Methodology:</span>
-            <span className="font-semibold text-ink">Problem → Process → Solution → Result</span>
+            <span>Role:</span>
+            <span className="font-semibold text-ink">Product + UX + execution</span>
           </div>
         </div>
 
@@ -135,11 +131,10 @@ export default function CaseStudiesSection() {
                               <button
                                 key={tabKey}
                                 onClick={() => handleTabChange(study.id, tabKey)}
-                                className={`flex-1 sm:flex-initial px-3 sm:px-4 py-1.5 rounded-lg text-xs font-mono capitalize transition-all ${
-                                  isActive
-                                    ? 'bg-ink text-paper font-semibold shadow-sm'
-                                    : 'text-ink-secondary hover:text-ink hover:bg-canvas'
-                                }`}
+                                className={`flex-1 sm:flex-initial px-3 sm:px-4 py-1.5 rounded-lg text-xs font-mono capitalize transition-all ${isActive
+                                  ? 'bg-ink text-paper font-semibold shadow-sm'
+                                  : 'text-ink-secondary hover:text-ink hover:bg-canvas'
+                                  }`}
                               >
                                 {tabKey === 'result' ? '★ Result' : tabKey}
                               </button>
@@ -246,7 +241,7 @@ export default function CaseStudiesSection() {
                         </div>
                       )}
 
-                      {study.id === 'delizoo' && (
+                      {false && study.id === 'delizoo' && (
                         <div className="space-y-3 font-mono text-xs">
                           <div className="p-3 rounded-lg bg-black/40 border border-white/5 space-y-2">
                             <div className="flex items-center justify-between text-gray-400 text-[11px]">
@@ -279,6 +274,23 @@ export default function CaseStudiesSection() {
                           </div>
                         </div>
                       )}
+
+                      <div className="space-y-3 font-mono text-xs">
+                        <div className="p-3 rounded-lg bg-black/40 border border-white/5 space-y-3">
+                          <div className="flex items-center justify-between text-gray-400 text-[11px]">
+                            <span>PRODUCT_RUNTIME</span>
+                            <span className="text-emerald-400">IN PROGRESS</span>
+                          </div>
+                          <div className="grid grid-cols-2 gap-2 text-[11px]">
+                            <div className="p-2 rounded bg-white/5"><div className="text-gray-400">Product</div><div className="text-white font-bold">{study.title}</div></div>
+                            <div className="p-2 rounded bg-white/5"><div className="text-gray-400">Focus</div><div className="text-emerald-400 font-bold">{study.projectNumber}</div></div>
+                          </div>
+                          <div className="border-t border-white/10 pt-2 text-gray-400">Current state: <span className="text-brand-lime">{study.previewMockup.badge}</span></div>
+                        </div>
+                        <div className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-between text-emerald-300 font-sans text-xs">
+                          <span>{study.subtitle}</span><span className="font-mono text-[10px] bg-emerald-500/20 px-1.5 py-0.5 rounded text-emerald-300">CASE STUDY</span>
+                        </div>
+                      </div>
 
                       {/* Mockup Footer Stats */}
                       <div className="mt-4 pt-3 border-t border-line-dark/60 flex items-center justify-between text-[11px] font-mono text-gray-400">

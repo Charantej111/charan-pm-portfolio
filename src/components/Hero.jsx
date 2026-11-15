@@ -51,7 +51,7 @@ export default function Hero() {
           </div>
 
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tighter leading-[1.08] text-ink max-w-4xl">
-            <span className="text-ink-muted font-normal block sm:inline">Hey there. I'm </span>
+            <span className="text-ink-muted font-normal block sm:inline">Hey, I am </span>
             <span className="text-ink">{portfolioData.personal.name}</span>
             <span className="block mt-2 sm:mt-3 text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink">
               Building at the intersection of{' '}

@@ -4,7 +4,7 @@ export const portfolioData = {
     role: "Early-Stage Product Manager",
     headlineBold: "Early-Stage Product Manager",
     headlineMuted: "building at the intersection of AI, consumer apps, and scalable marketplaces.",
-    bio: "I turn messy, ambiguous user problems into structured, high-margin software. Working cross-functionally across product strategy, system design, technical execution, and go-to-market operations.",
+    bio: "I work across product strategy, design, technology, business, operations, marketing, and customer experience to turn ideas into products people actually use.",
     location: "Bangalore, India · Available Globally (Remote / Hybrid)",
     availability: "Available for Q1 2026 Roles & Founding PM Projects",
     statusBadge: "Available for new projects",
