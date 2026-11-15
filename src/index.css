@@ -59,6 +59,15 @@
   right: -7px;
 }
 
+/* Suppress Framer badge if injected */
+#__framer-badge-container,
+.__framer-badge {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
 /* Tactile button hover states */
 .btn-tactile {
   transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease;
