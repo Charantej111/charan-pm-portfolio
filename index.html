@@ -437,6 +437,38 @@ html.lenis body {
 	<!-- Start of bodyEnd -->
     
     <!-- End of bodyEnd -->
-<script>window.addEventListener('load', () => { setInterval(() => { document.querySelectorAll('*').forEach(el => { if (el.children.length === 0 && el.textContent) { if (el.textContent.includes('David Harley')) el.textContent = el.textContent.replace(/David Harley/g, 'Charan Tej'); if (el.textContent.trim() === 'Product designer') el.textContent = 'Product Manager'; if (el.textContent.includes('deeply care about polish')) el.textContent = 'I work across product strategy, design, technology, business, operations, marketing, and customer experience to turn ideas into products people actually use.'; } }); }, 200); });</script>
+<script>
+window.addEventListener('load', () => {
+  const replaceContent = () => {
+    // 1. Text node replacements (Hero name, hero bio, pointer tag)
+    document.querySelectorAll('*').forEach(el => {
+      if (el.children.length === 0 && el.textContent) {
+        if (el.textContent.includes('David Harley')) {
+          el.textContent = el.textContent.replace(/David Harley/g, 'Charan Tej');
+        }
+        if (el.textContent.trim() === 'Product designer') {
+          el.textContent = 'Product Manager';
+        }
+        if (el.textContent.includes('deeply care about polish')) {
+          el.textContent = 'I work across product strategy, design, technology, business, operations, marketing, and customer experience to turn ideas into products people actually use.';
+        }
+      }
+    });
+
+    // 2. More about me blockquote replacement
+    document.querySelectorAll('blockquote[aria-label]').forEach(b => {
+      const label = b.getAttribute('aria-label') || '';
+      if (label.includes('product designer and Framer creator')) {
+        const newAboutText = "I like being close to the product. From figuring out what should be built to designing the experience, working with developers, testing the product, launching it, and talking to users afterwards";
+        b.setAttribute('aria-label', newAboutText);
+        b.innerHTML = newAboutText;
+      }
+    });
+  };
+
+  replaceContent();
+  setInterval(replaceContent, 200);
+});
+</script>
 </body>
 </html>
