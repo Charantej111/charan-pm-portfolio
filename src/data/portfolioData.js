@@ -9,7 +9,7 @@ export const portfolioData = {
     availability: "Available for Q1 2026 Roles & Founding PM Projects",
     statusBadge: "Available for new projects",
     firmAward: "Early-Stage Builder of the Year 2025 · Product & Systems",
-    email: "charan.product@gmail.com",
+    email: "career.charantej@gmail.com",
     phone: "+91 98765 43210",
     socials: [
       { name: "LinkedIn", url: "https://linkedin.com/in/charantej", handle: "in/charantej" },

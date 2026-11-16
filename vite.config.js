@@ -1,8 +1,27 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
+import fs from 'fs'
 
-// https://vitejs.dev/config/
+// Custom middleware to serve HTML files cleanly without trailing slashes in dev mode
+function multiPageMiddleware() {
+  return {
+    name: 'multi-page-middleware',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        let url = req.url.split('?')[0];
+        if (url === '/about-me' || url === '/about-me/') {
+          req.url = '/about-me/index.html';
+        } else if (url === '/projects' || url === '/projects/') {
+          req.url = '/projects/index.html';
+        }
+        next();
+      });
+    }
+  };
+}
+
 export default defineConfig({
+  plugins: [multiPageMiddleware()],
   build: {
     rollupOptions: {
       input: {
